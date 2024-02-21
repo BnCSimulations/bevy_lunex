@@ -512,7 +512,7 @@ impl TextElementBundle {
                 ..default()
             },
             text: Text::from_section(text, params.style.clone())
-                .with_alignment(params.alignment),
+                .with_justify(params.alignment),
             text_anchor: params.anchor.clone(),
             visibility: Visibility::Hidden,
             ..default()
@@ -550,7 +550,7 @@ pub struct TextParams {
     pub style: TextStyle,
     /// ### Alignment
     /// Where the text is aligned - left/center/right.
-    pub alignment: TextAlignment,
+    pub alignment: JustifyText,
     /// ### Anchor
     /// Which corner of the text is origin (0.0).
     pub anchor: bevy::sprite::Anchor,
@@ -573,7 +573,7 @@ impl Default for TextParams {
             relative: Vec2::new(0.0, 0.0),
             absolute: Vec2::new(0.0, 0.0),
             style: TextStyle::default(),
-            alignment: TextAlignment::Left,
+            alignment: JustifyText::Left,
             anchor: bevy::sprite::Anchor::CenterLeft,
             scale: 100.0,
             depth: 3.0,
@@ -587,7 +587,7 @@ impl TextParams {
     pub fn topcenter() -> TextParams {
         TextParams {
             relative: Vec2::new(50.0, 0.0),
-            alignment: TextAlignment::Center,
+            alignment: JustifyText::Center,
             anchor: bevy::sprite::Anchor::TopCenter,
             ..Default::default()
         }
@@ -596,7 +596,7 @@ impl TextParams {
     pub fn topleft() -> TextParams {
         TextParams {
             relative: Vec2::new(0.0, 0.0),
-            alignment: TextAlignment::Left,
+            alignment: JustifyText::Left,
             anchor: bevy::sprite::Anchor::TopLeft,
             ..Default::default()
         }
@@ -605,7 +605,7 @@ impl TextParams {
     pub fn topright() -> TextParams {
         TextParams {
             relative: Vec2::new(100.0, 0.0),
-            alignment: TextAlignment::Right,
+            alignment: JustifyText::Right,
             anchor: bevy::sprite::Anchor::TopRight,
             ..Default::default()
         }
@@ -615,7 +615,7 @@ impl TextParams {
     pub fn center() -> TextParams {
         TextParams {
             relative: Vec2::new(50.0, 50.0),
-            alignment: TextAlignment::Center,
+            alignment: JustifyText::Center,
             anchor: bevy::sprite::Anchor::Center,
             ..Default::default()
         }
@@ -624,7 +624,7 @@ impl TextParams {
     pub fn centerleft() -> TextParams {
         TextParams {
             relative: Vec2::new(0.0, 50.0),
-            alignment: TextAlignment::Left,
+            alignment: JustifyText::Left,
             anchor: bevy::sprite::Anchor::CenterLeft,
             ..Default::default()
         }
@@ -633,7 +633,7 @@ impl TextParams {
     pub fn centerright() -> TextParams {
         TextParams {
             relative: Vec2::new(100.0, 50.0),
-            alignment: TextAlignment::Right,
+            alignment: JustifyText::Right,
             anchor: bevy::sprite::Anchor::CenterRight,
             ..Default::default()
         }
@@ -643,7 +643,7 @@ impl TextParams {
     pub fn bottomcenter() -> TextParams {
         TextParams {
             relative: Vec2::new(50.0, 100.0),
-            alignment: TextAlignment::Center,
+            alignment: JustifyText::Center,
             anchor: bevy::sprite::Anchor::BottomCenter,
             ..Default::default()
         }
@@ -652,7 +652,7 @@ impl TextParams {
     pub fn bottomleft() -> TextParams {
         TextParams {
             relative: Vec2::new(0.0, 100.0),
-            alignment: TextAlignment::Left,
+            alignment: JustifyText::Left,
             anchor: bevy::sprite::Anchor::BottomLeft,
             ..Default::default()
         }
@@ -661,7 +661,7 @@ impl TextParams {
     pub fn bottomright() -> TextParams {
         TextParams {
             relative: Vec2::new(100.0, 100.0),
-            alignment: TextAlignment::Right,
+            alignment: JustifyText::Right,
             anchor: bevy::sprite::Anchor::BottomRight,
             ..Default::default()
         }

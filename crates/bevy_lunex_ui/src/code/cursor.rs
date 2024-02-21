@@ -92,7 +92,7 @@ pub fn cursor_preupdate(mut query: Query<&mut Cursor>) {
 }
 
 /// Applies requested cursor index as sprite index
-pub fn cursor_update_texture(mut query: Query<(&Cursor, &mut TextureAtlasSprite)>) {
+pub fn cursor_update_texture(mut query: Query<(&Cursor, &mut TextureAtlas)>) {
     for (cursor, mut sprite) in &mut query {
         sprite.index = cursor.request_cursor_index;
     }

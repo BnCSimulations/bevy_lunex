@@ -32,13 +32,13 @@ pub fn lunex_draw_lines_debug_2d<T:Component + Default>(
 /// A system that will allow the camera to move out of view by WASD on 2D plane.
 pub fn lunex_camera_move_debug_2d(
     mut query: Query<(&Camera, &mut Transform)>,
-    keyboard_input: Res<Input<KeyCode>>,
+    keyboard_input: Res<ButtonInput<KeyCode>>,
 ) {
     for (_, mut transform) in &mut query {
-        transform.translation.x += (keyboard_input.pressed(KeyCode::A) as i32) as f32 * -10.0;
-        transform.translation.x += (keyboard_input.pressed(KeyCode::D) as i32) as f32 * 10.0;
-        transform.translation.y += (keyboard_input.pressed(KeyCode::S) as i32) as f32 * -10.0;
-        transform.translation.y += (keyboard_input.pressed(KeyCode::W) as i32) as f32 * 10.0;
+        transform.translation.x += (keyboard_input.pressed(KeyCode::KeyA) as i32) as f32 * -10.0;
+        transform.translation.x += (keyboard_input.pressed(KeyCode::KeyD) as i32) as f32 * 10.0;
+        transform.translation.y += (keyboard_input.pressed(KeyCode::KeyS) as i32) as f32 * -10.0;
+        transform.translation.y += (keyboard_input.pressed(KeyCode::KeyW) as i32) as f32 * 10.0;
     }
 }
 
